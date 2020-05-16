@@ -1,18 +1,18 @@
-# Ultrasound
+# Ultrasound Fork
 
-A new take on the iOS volume HUD. A mobile substrate tweak.
+Please check out and purchase the official source through the link below:
 
-[Get it on Dynastic Repo](https://get.dyn.dev/ultrasound)
+[Get Ultrasound on Dynastic Repo](https://get.dyn.dev/ultrasound)
 
-## Reporting Issues
+## Warnings
 
-If you find a bug or code issue, report it on the [issues page](https://github.com/aydenp/Ultrasound/issues). Keep in mind that this is for actual bugs, **NOT BUILD ISSUES**.
-
-## Contributing
-
-Feel free to contribute to the source code of Ultrasound to make it something even better! Just try to adhere to the general coding style throughout, to make it as readable as possible.
+Do not use this source code to build or distrbute Ultrasound packages. It is very far behind the official Ultrasound repo. I merely used this as a learning guide for compiling packages and examining source code on Theos. 
 
 ## License
 
-This project is licensed under the [MIT license](/LICENSE). Please make sure you comply with its terms while using it in any way.
+The original Ultrasound project is licensed under the [MIT license](/LICENSE). Please make sure you comply with its terms while using it in any way.
+
+## Support the original creator
+
+Ayden Panhuyzen makes excellent, high-quality tweaks on the Dynastic repo. I highly encourage you to go and check out some of his other work there. Thanks to him for providing the source code to learn from and test out!
 
