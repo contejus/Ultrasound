@@ -1,0 +1,10 @@
+Package: com.contejus.willow
+Name: Ultrasound
+Depends: mobilesubstrate, firmware (>= 11.0), preferenceloader
+Version: 1.2.9
+Architecture: iphoneos-arm
+Description: A fork of Ayden Panhuyzen's Ultrasound tweak, built from his GitHub source code. Please check out his tweak on Dynastic repo. 
+Maintainer: Ayden Panhuyzen
+Author: Ayden Panhuyzen
+Section: Tweaks
+Conflicts: com.ruler225.videohud, com.spark.melior, net.midkin.smartvolumecontrol2, es.ubikstyl.sonus12, me.nepeta.brokenhud, me.nepeta.flashyhud
