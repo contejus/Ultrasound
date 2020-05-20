@@ -127,6 +127,10 @@
     [self layoutIfNeeded];
 }
 
+- (void)userInterfaceStyleChanged {
+    [volumeHUD applyThemeAnimated:YES];
+}
+
 - (void)interactiveDismissPanned:(ABInstantPanGestureRecognizer *)gesture {
     CGFloat translation = [gesture translationInView:self].x;
     CGPoint velocity = [gesture velocityInView:self];
@@ -268,7 +272,7 @@
     if (![ABVolumeHUDManager sharedManager].volumeInfoProvider) return;
     
     // Get new desired mode
-    ABVolumeHUDVolumeMode newMode = volumeModeInfo.mode == ABVolumeHUDVolumeModeRinger ? ABVolumeHUDVolumeModeAudioVolume : ABVolumeHUDVolumeModeRinger;
+    ABVolumeHUDVolumeMode newMode = volumeModeInfo.mode == ABVolumeHUDVolumeModeRinger ? ABVolumeHUDVolumeModeAudio : ABVolumeHUDVolumeModeRinger;
     
     // Get new display volume
     CGFloat newVolume = [[ABVolumeHUDManager sharedManager].volumeInfoProvider volumeForVolumeMode:newMode];

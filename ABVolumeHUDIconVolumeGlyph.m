@@ -24,7 +24,10 @@
 
 - (void)setupForDisplay {
     glyphView = [[NSClassFromString(@"CCUICAPackageView") alloc] init];
-    glyphView.packageDescription = [NSClassFromString(@"CCUICAPackageDescription") descriptionForPackageNamed:kGlyphPackageName inBundle:kGlyphPackageBundle];
+
+    NSBundle *packageBundle = kGlyphPackageBundle;
+    
+    glyphView.packageDescription = [NSClassFromString(@"CCUICAPackageDescription") descriptionForPackageNamed:kGlyphPackageName inBundle:packageBundle];
     glyphView.translatesAutoresizingMaskIntoConstraints = NO;
     glyphView.transform = CGAffineTransformMakeScale(0.7, 0.7);
     [self addSubview:glyphView];

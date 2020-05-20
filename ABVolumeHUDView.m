@@ -10,6 +10,7 @@
 #import "ABVolumeHUDViewSettings.h"
 #import "ABVolumeHUDManager.h"
 #import "ABVolumeHUDPassthroughView.h"
+#import "NSObject+SafeKVC.h"
 
 #define kVolumeLabelDefaultFont [UIFont systemFontOfSize:13 weight:UIFontWeightBold]
 #define kVolumeLabelOverrideFont [UIFont systemFontOfSize:13 weight:UIFontWeightSemibold]
@@ -40,11 +41,12 @@
 
 - (void)setupForDisplay {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applySettings) name:kHUDSettingsChanged object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applyThemeWithNotification:) name:kThemeChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applyThemeWithNotification:) name:kThemeSettingsChangedNotification object:nil];
     
     backdropView = [[UIVisualEffectView alloc] init];
     backdropView.translatesAutoresizingMaskIntoConstraints = NO;
     backdropView.clipsToBounds = YES;
+    [backdropView.layer safelySetValue:@(YES) forKey:@"continuousCorners"];
     [self addSubview:backdropView];
     [backdropView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
     [backdropView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
@@ -269,7 +271,6 @@
         if (tapticProvider) [tapticProvider warmUp];
     } else {
         [[self.delegate visibilityManager] releaseProlongedDisplayForReason:@"slider_touch"];
-        if (tapticProvider) [tapticProvider coolDown];
     }
 }
 
